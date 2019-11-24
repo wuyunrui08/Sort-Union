@@ -11,27 +11,27 @@
 
 >>- 首先我们看到，一个无序的数组如下，为了简约，以及简便解释，我们定义了8个元素。
 
-![photo1](./Photos/photo1)
+![photo1](./Photos/photo1.png)
 
 >> - 然后，我们把该8个元素进行划分，分成左边四个，和右边四个，如下图。
 
-![photo2](./Photos/photo2)
+![photo2](./Photos/photo2.png)
 
 >> - 依次按照上边的方法，把剩余的数组继续拆分，一直拆到只剩下一个元素的时候，停止。
 
-![photo3](./Photos/photo3)
+![photo3](./Photos/photo3.png)
 
 >> - 由于存在8个单独的子元素，然后我们两两把元素合并，并且按照一定顺序排序(此处用从小到大的顺序排序)。
 
-![photo4](./Photos/photo4)
+![photo4](./Photos/photo4.png)
 
 >> - 此时，我们可以看到我们又得到了四个不同颜色的数组，并且在这个数组里边，也是按照一定的顺序排好序的。随后，继续利用这种方法，把剩余的继续合并，一直合并到所有数都在一个数组里边。此时便是完成了合并。
 
-![photo6](./Photos/photo5)
+![photo6](./Photos/photo5.png)
 
 >> - 整个过程(包括拆分和合并)如下：
 
-![photo8](./Photos/photo6)
+![photo8](./Photos/photo6.png)
 
 ---
 
