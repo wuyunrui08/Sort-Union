@@ -38,14 +38,16 @@
 ### 代码如下：
 
 ``` C++
+
 #include<iostream>
 #include<cstdlib>
 #include<vector>
+#include<time.h>
 using namespace std;
 
 void Split(vector<int>& pos, vector<int>& temp, const int start, const int end);
 void Merge(vector<int>& pos, vector<int>& temp, const int left, const int mid, const int right);
-void MergeSort(vector<int>& pos, const int start, const int end);
+double MergeSort(vector<int>& pos, const int start, const int end);
 void Display1(vector<int>& pos);
 void Display2(vector<int>& pos);
 
@@ -54,18 +56,20 @@ int main()
 	int n;
 	cout << "请输入排序的数的个数" << endl;
 	cin >> n;
-	
+
 	vector<int>pos(n, 0);//申请n个数
-	
+
 	cout << "请输入需要排序的数" << endl;
 	for (int i = 0; i < n; i++)
-		cin >> pos[i];//初始化数据
-	
+	{
+		srand(time(nullptr) + i);
+		pos[i] = rand() % 100;//初始化数据
+	}
 	Display1(pos);//显示排序前的数组
 
-	MergeSort(pos, 0, pos.size() - 1);//从第几个数开始，0个到最后一个数进行归并排序
+	cout<<"花费时间:"<<MergeSort(pos, 0, pos.size() - 1)<<"ms"<<endl;//从第几个数开始，0个到最后一个数进行归并排序
 	Display2(pos);//显示排序后的数组
-	
+
 	pos.clear();
 	return 0;
 }
@@ -125,11 +129,15 @@ void Merge(vector<int>& pos, vector<int>& temp, const int left, const int mid, c
 }
 
 //排序算法
-void MergeSort(vector<int>& pos, const int start, const int end)
+double MergeSort(vector<int>& pos, const int start, const int end)
 {
 	vector<int>temp(pos.size(), 0);//创建临时数组
+	clock_t startTime, endTime;
+	startTime = clock();
 	Split(pos, temp, start, end);
+	endTime = clock();
 	temp.clear();
+	return (double)(endTime - startTime);
 }
 
 void Display1(vector<int>& pos)
