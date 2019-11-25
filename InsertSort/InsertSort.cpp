@@ -9,22 +9,24 @@ void Display(vector<int>& ans);
 
 int main()
 {
-	const int Number = 10000;
+	int number;
+	cout << "请输入个数" << endl;
+	cin >> number;
 	vector<int>array;//数组array
 	//随机取Number个数字
-	for (int i = 0; i < Number; i++)
+	for (int i = 0; i < number; i++)
 	{
 		srand(time(nullptr)+i);
-		array.push_back(rand() % Number);
+		array.push_back(rand() % 1000);
 	}
-	//cout << "排序前的情况:" << endl;
+	cout << "排序前的情况:" << endl;
 	
-	//Display(array);//显示排序前的情况
+	Display(array);//显示排序前的情况
 	
-	cout << "排序所用时间：" << InsertSort(array) << "ms" << endl;
+	cout << "排序所用时间：" << InsertSort(array)<<"ms"<<endl;
 	
-	//cout << endl << "排序后的情况" << endl;
-	//Display(array);
+	cout << endl << "排序后的情况" << endl;
+	Display(array);
 
 	return 0;
 }
@@ -54,5 +56,5 @@ void Display(vector<int>& ans)
 {
 	for (int i = 0; i < ans.size(); i++)
 		cout << ans[i] << " ";
-	cout << endl;
+	cout << endl << endl;
 }
