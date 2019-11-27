@@ -24,7 +24,7 @@
 
 来看一个动态的图示演例
 
-![dynamic]()
+![dynamic](./Photos/photo.gif)
 
 
 ---
